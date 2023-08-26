@@ -1,0 +1,6 @@
+const { mergeTypeDefs } = require("@graphql-tools/merge");
+const githubTypeDefs = require("./github/github.typeDefs.gql");
+
+const typeDefs = [githubTypeDefs];
+module.exports = mergeTypeDefs(typeDefs);
+

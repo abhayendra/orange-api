@@ -1,0 +1,37 @@
+const { gql } = require("apollo-server-express");
+const githubTypeDefs = gql`
+  type Repository {
+    name: String
+    size: Int
+    owner: String
+  }
+
+  type RepoDetails {
+    name: String
+    size: Int
+    owner: String
+    isPrivate: Boolean
+    numberOfFiles: Int
+    activeWebhooks: [webHook]
+  }
+
+  type webHook {
+    type: String
+    id: Int
+    name: String,
+    active: Boolean
+  }
+ 
+  type fileContent{
+    content : String
+  }
+
+  type Query {
+    listRepositories: [Repository]
+    repoDetails(name: String!): RepoDetails
+    repoFileContent(name: String! , filepath:String!): fileContent
+  }
+`;
+
+module.exports = githubTypeDefs;
+ 
