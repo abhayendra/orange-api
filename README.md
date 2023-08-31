@@ -74,7 +74,7 @@ query {
 }
 ```
 
-### 2. Show FileContent 
+### 3. Show FileContent 
 
 To retrieve detailed information about a specific repository, use the following GraphQL query:
 
