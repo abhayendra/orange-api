@@ -38,7 +38,6 @@ const githubResolvers = {
       const repoData = await getRepoDetails(name);
       const numberOfFiles = await getNumberOfFiles(name);
       const activeWebhooks = await getActiveWebhooks(name);
-      console.log(activeWebhooks);
       const repoDetails = {
         name: repoData.name,
         size: repoData.size,
@@ -47,7 +46,6 @@ const githubResolvers = {
         numberOfFiles: numberOfFiles,
         activeWebhooks: activeWebhooks,
       };
-      console.log(repoDetails);
       return repoDetails;
     },
 
